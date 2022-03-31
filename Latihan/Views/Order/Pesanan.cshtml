@@ -1,0 +1,73 @@
+﻿
+@model Latihan.ViewModel.ViewMenu
+@{
+    ViewData["Title"] = "Pesanan";
+}
+
+<h1>Pesanan</h1>
+<table>
+    <tr>
+        <td>
+            <div>
+                @Html.Label("Normal Dropdownlist Binding")
+            </div>
+        </td>
+        <td>
+            <div class="editor-label">
+                @Html.Label("Select Mobile Name")
+            </div>
+        </td>
+        <td>
+            <div class="editor-field">
+                @Html.DropDownListFor(m => m.id, new SelectList(Model.menuList, "Value", "Text"), "Select Mobile")
+            </div>
+        </td>
+    </tr>
+<table>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Masukkan Pesanan</h3>
+                    </div>
+                    <form class="form-horizontal">
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label for="user" class="col-sm-2 col-form-label">Nama Makanan</label>
+                                <div class="col-sm-6">
+                                    <select class="form-control " id="selectuser">
+                                        <option value="0">Pilih Makanan</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row" id="ddlproject">
+                                <label for="projectactivity" class="col-sm-2 col-form-label">Harga Makanan</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="otherproject" name="otherproject" placeholder="0" readonly="true">
+                                </div>
+                            </div>
+                            <div class="form-group row" id="ddleditor">
+                                <label for="editoractivity" class="col-sm-2 col-form-label">Porsi</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="othereditor" name="othereditor" placeholder="Editor Name">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="button" id="saveActivity" class="btn btn-primary">Submit</button>
+                        </div>
+                        <!-- /.card-footer -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script src="~/js/AdminUser.js"></script>
+}

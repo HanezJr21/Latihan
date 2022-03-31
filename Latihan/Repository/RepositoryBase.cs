@@ -2,9 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace Latihan.Repository
 {
@@ -19,7 +20,8 @@ namespace Latihan.Repository
 
         public IDbConnection GetDbConnection()
         {
-            return new SqlConnection(_configuration.GetConnectionString("Default"));
+            var connectionString = _configuration.GetConnectionString("Mysql");
+            return new MySqlConnection(connectionString);
         }
     }
 }

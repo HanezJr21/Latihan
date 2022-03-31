@@ -27,6 +27,7 @@ namespace Latihan
         {
             services.AddControllersWithViews();
             services.AddScoped<IMenu, MenuRepository>();
+            services.AddScoped<RepositoryBase, RepositoryBase>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

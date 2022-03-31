@@ -5,7 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Latihan.Interface;
 using Latihan.Models;
+using Latihan.ViewModel;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Latihan.Controllers
 {
@@ -38,6 +40,13 @@ namespace Latihan.Controllers
                 _logger.LogError(ex.Message);
             }
             return Json(response);
+        }
+
+        public ActionResult Pesanan()
+        {
+            ViewMenu menu = new ViewMenu();
+            menu.menuList = new SelectList(_menu.GetMenuList(), "id", "namaMakanan");
+            return View(menu);
         }
     }
 }
